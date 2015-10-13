@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
                         Input fields velidator for MSA.
                        DESC
 
-  s.homepage         = "git remote add origin https://garylaiph@bitbucket.org/garylaiph/msavalidator"
+  s.homepage         = "https://garylaiph@bitbucket.org/garylaiph/msavalidator"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "GaryLai" => "garylaiph@gmail.com" }
