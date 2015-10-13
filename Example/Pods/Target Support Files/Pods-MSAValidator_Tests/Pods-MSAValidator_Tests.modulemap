@@ -1,0 +1,6 @@
+framework module Pods_MSAValidator_Tests {
+  umbrella header "Pods-MSAValidator_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
