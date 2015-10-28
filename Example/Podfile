@@ -4,7 +4,7 @@ use_frameworks!
 
 target 'MSAValidator_Tests', :exclusive => true do
   pod "MSAValidator", :path => "../"
-
-  pod 'Quick', '~> 0.3.1'
-  pod 'Nimble'
+  
+  pod 'Quick', '~> 0.8.0'
+  pod 'Nimble', '3.0.0'
 end

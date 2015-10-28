@@ -1,15 +1,15 @@
 {
   "name": "MSAValidator",
   "version": "0.1.0",
-  "summary": "A short description of MSAValidator.",
-  "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/MSAValidator",
+  "summary": "Input fields velidator for MSA",
+  "description": "Input fields velidator for MSA.",
+  "homepage": "https://garylaiph@bitbucket.org/garylaiph/msavalidator",
   "license": "MIT",
   "authors": {
     "GaryLai": "cppgla@cathaypacific.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/MSAValidator.git",
+    "git": "https://garylaiph@bitbucket.org/garylaiph/msavalidator.git",
     "tag": "0.1.0"
   },
   "platforms": {

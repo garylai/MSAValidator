@@ -1,20 +1,20 @@
 PODS:
   - MSAValidator (0.1.0)
-  - Nimble (2.0.0)
-  - Quick (0.3.1)
+  - Nimble (3.0.0)
+  - Quick (0.8.0)
 
 DEPENDENCIES:
   - MSAValidator (from `../`)
-  - Nimble
-  - Quick (~> 0.3.1)
+  - Nimble (= 3.0.0)
+  - Quick (~> 0.8.0)
 
 EXTERNAL SOURCES:
   MSAValidator:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MSAValidator: 1999f56013dfd5382cbfd8cca1396dca19ab59d9
-  Nimble: 472e75466819eb8c06299233e87c694a9b51328a
-  Quick: 824572d3d198d51e52cf4aa722cebf7e59952a35
+  MSAValidator: 576c3514c23ac839be17615bb0d9f406a9c65371
+  Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
+  Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
 
 COCOAPODS: 0.38.2
