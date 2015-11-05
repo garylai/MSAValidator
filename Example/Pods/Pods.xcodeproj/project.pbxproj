@@ -91,6 +91,7 @@
 		F2287FEE488E8F2C634E51C8ED004889 /* NSString+QCKSelectorName.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FED49EEBD8974F05926CC2CB7BBE2FD /* NSString+QCKSelectorName.m */; };
 		FAF71876BF880CCF9283C1E999E52E81 /* MSAValidator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AD89C821CA9FDC450BC8703DFC41F8 /* MSAValidator-dummy.m */; };
 		FB993680B24EC264C6966F38408F33A3 /* ExampleHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785D9DF519970819337DE8356C9D737 /* ExampleHooks.swift */; };
+		FC05CB7C1BEB51CC00C6EE3A /* PickerSelectionRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC05CB7B1BEB51CC00C6EE3A /* PickerSelectionRule.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,6 +234,7 @@
 		F72AD286EE38825A2971DE87CF0A5D1D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F85F408B1F4CBA7F1A207E70BC2843B0 /* QCKDSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QCKDSL.h; path = Quick/DSL/QCKDSL.h; sourceTree = "<group>"; };
 		FAED14D58462E79A9C139BC3F941B8FC /* BeEmpty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeEmpty.swift; path = Nimble/Matchers/BeEmpty.swift; sourceTree = "<group>"; };
+		FC05CB7B1BEB51CC00C6EE3A /* PickerSelectionRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerSelectionRule.swift; sourceTree = "<group>"; };
 		FE818653972775A149148FE86348CA0C /* AdapterProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdapterProtocols.swift; path = Nimble/Adapters/AdapterProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -422,6 +424,7 @@
 				0AA95A685357CD2CEB4788548B69D4CE /* MaxLengthRule.swift */,
 				C979CD90190FDDBCEF744A8A8C2A0CCA /* RequiredRule.swift */,
 				AD06A6A04F7F7C001E6CEC8AD704A9CE /* Validator.swift */,
+				FC05CB7B1BEB51CC00C6EE3A /* PickerSelectionRule.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -715,6 +718,7 @@
 				FAF71876BF880CCF9283C1E999E52E81 /* MSAValidator-dummy.m in Sources */,
 				59828716A49B22A0C65A631780EDABE9 /* MaxLengthRule.swift in Sources */,
 				3C32557F86872D2BE5A0D34FD09A10EF /* RequiredRule.swift in Sources */,
+				FC05CB7C1BEB51CC00C6EE3A /* PickerSelectionRule.swift in Sources */,
 				9D771852CA5F65C3D6961698EBA5E209 /* Validator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

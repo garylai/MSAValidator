@@ -37,10 +37,10 @@ private class EmailRule {
     }
 }
 
-public func IsAnEmail() -> (textView : UITextView) -> ValidationResult {
+public func IsAnEmail() -> (UITextView) -> ValidationResult {
     return EmailRule().validate;
 }
 
-public func IsAnEmail() -> (textField : UITextField) -> ValidationResult {
+public func IsAnEmail() -> (UITextField) -> ValidationResult {
     return EmailRule().validate;
 }

@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		607FACEC1AFB9204008FA782 /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* ValidatorTests.swift */; };
 		65DE114A70B983CD3A8B20AD /* Pods_MSAValidator_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72BC63D4993C84D115BB56A0 /* Pods_MSAValidator_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		FCB71E751BEB397700BBF72F /* RulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB71E741BEB397700BBF72F /* RulesTests.swift */; settings = {ASSET_TAGS = (); }; };
+		FC05CB7E1BEB550000C6EE3A /* PickerViewRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC05CB7D1BEB550000C6EE3A /* PickerViewRule.swift */; settings = {ASSET_TAGS = (); }; };
+		FCB71E751BEB397700BBF72F /* TextBasedRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB71E741BEB397700BBF72F /* TextBasedRulesTests.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,8 +23,9 @@
 		91BADF165E822489D50D8EE4 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		C98D05B784E085316EC3F99C /* MSAValidator.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MSAValidator.podspec; path = ../MSAValidator.podspec; sourceTree = "<group>"; };
 		CE12A3DA3F14C6D1145ADB76 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		FC05CB7D1BEB550000C6EE3A /* PickerViewRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewRule.swift; sourceTree = "<group>"; };
 		FC21AD4D1BE9DEE200540B07 /* MSAValidator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MSAValidator.framework; path = "Pods/../build/Debug-iphoneos/MSAValidator.framework"; sourceTree = "<group>"; };
-		FCB71E741BEB397700BBF72F /* RulesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesTests.swift; sourceTree = "<group>"; };
+		FCB71E741BEB397700BBF72F /* TextBasedRulesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBasedRulesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +80,8 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				FCB71E741BEB397700BBF72F /* RulesTests.swift */,
+				FC05CB7D1BEB550000C6EE3A /* PickerViewRule.swift */,
+				FCB71E741BEB397700BBF72F /* TextBasedRulesTests.swift */,
 				607FACEB1AFB9204008FA782 /* ValidatorTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
@@ -223,8 +226,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC05CB7E1BEB550000C6EE3A /* PickerViewRule.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* ValidatorTests.swift in Sources */,
-				FCB71E751BEB397700BBF72F /* RulesTests.swift in Sources */,
+				FCB71E751BEB397700BBF72F /* TextBasedRulesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

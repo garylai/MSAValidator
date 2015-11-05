@@ -36,10 +36,10 @@ private class MaxLengthRule {
     }
 }
 
-public func IsShorterThan(maxLength : Int) -> (textView : UITextField) -> ValidationResult {
+public func IsShorterThan(maxLength : Int) -> (UITextField) -> ValidationResult {
     return MaxLengthRule(maxLength: maxLength).validate;
 }
 
-public func IsShorterThan(maxLength : Int) -> (textField : UITextView) -> ValidationResult {
+public func IsShorterThan(maxLength : Int) -> (UITextView) -> ValidationResult {
     return MaxLengthRule(maxLength: maxLength).validate;
 }

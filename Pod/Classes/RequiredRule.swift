@@ -25,11 +25,11 @@ private class RequiredRule {
     }
 }
 
-public func IsPresent() -> (textView : UITextView) -> ValidationResult {
+public func IsPresent() -> (UITextView) -> ValidationResult {
     return RequiredRule().validate;
 }
 
-public func IsPresent() -> (textField : UITextField) -> ValidationResult {
+public func IsPresent() -> (UITextField) -> ValidationResult {
     return RequiredRule().validate;
 }
  

@@ -11,9 +11,9 @@ import Nimble
 import MSAValidator
 import UIKit
 
-class Rule: QuickSpec {
+class TextBasedRuleSpec: QuickSpec {
     override func spec() {
-        describe("Rules") {
+        describe("Text Based Rules") {
             var textField1: UITextField!;
             var textView1: UITextView!;
             var validator: Validator!;
