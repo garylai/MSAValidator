@@ -11,7 +11,7 @@ import UIKit
 private class EmailRule {
     private static let REGEX_STR = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
     private static let REGEX = try! NSRegularExpression(pattern: REGEX_STR, options: []);
-    private static let MESSAGE = "Please enter a valid email adress";
+    private static let MESSAGE = "Input is not a valid email adress";
     
     private func validate(inputText : String?) -> ValidationResult {
         if let text = inputText {
