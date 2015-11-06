@@ -60,9 +60,6 @@ public class Validator {
         if validationEntryDict[target] == nil {
             validationEntryDict[target] = ValidationEntry<T>(target);
         }
-        let entry = validationEntryDict[target];
-        print("entry: \(entry)");
-        print("as!: \(entry as! ValidationEntry<T>)");
         (validationEntryDict[target] as! ValidationEntry<T>).rules.appendContentsOf(rules);
     }
     
