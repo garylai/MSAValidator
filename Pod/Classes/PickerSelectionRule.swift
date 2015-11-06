@@ -13,7 +13,7 @@ private class PickerViewRule {
     private let validRange: Range<Int>;
     private var message :String {
         get {
-            return "Please select a value between the no. \(validRange.startIndex) and no. \(validRange.endIndex) option)";
+            return "Selected row in component no. \(componentIndex + 1) is not between \(validRange.startIndex + 1) and \(validRange.endIndex + 1)";
         }
     }
     init(compmentIndex componentIndex: Int, validRange: Range<Int>){
