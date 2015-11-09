@@ -8,38 +8,37 @@
 
 import UIKit
 
-private class MaxLengthRule {
-    private let _maxLength : Int;
-    private init (maxLength : Int) {
+private class MaxLengthRule : MSARule, UITextFieldRule, UITextViewRule {
+    let _maxLength : Int;
+    init (maxLength : Int, withErrorMessage errorMsg: String? = nil) {
         _maxLength = maxLength;
-    }
-    private var message : String {
-        get {
-            return "Input cannot be longer than \(_maxLength) characters";
-        }
+        super.init();
     }
     
-    private func validate(inputText: String?) -> ValidationResult  {
+    override var defaultErrorMessage : String {
+        return "Input cannot be longer than \(_maxLength) characters";
+    }
+    
+    func validate(inputText: String?) -> ValidationResult  {
         if let text = inputText where text.characters.count > _maxLength {
-            return ValidationResult(false, [message]);
-        } else {
-            return ValidationResult(true);
+            return ValidationResult(false, [errorMessage]);
         }
+        return ValidationResult(true);
     }
     
-    private func validate(textView : UITextView) -> ValidationResult {
+    func validate(textView : UITextView) -> ValidationResult {
         return validate(textView.text)
     }
     
-    private func validate(textField : UITextField) -> ValidationResult {
+    func validate(textField : UITextField) -> ValidationResult {
         return validate(textField.text);
     }
 }
 
-public func IsShorterThan(maxLength : Int) -> (UITextField) -> ValidationResult {
-    return MaxLengthRule(maxLength: maxLength).validate;
+public func IsShorterThan(maxLength : Int) -> UITextFieldRule {
+    return MaxLengthRule(maxLength: maxLength);
 }
 
-public func IsShorterThan(maxLength : Int) -> (UITextView) -> ValidationResult {
-    return MaxLengthRule(maxLength: maxLength).validate;
+public func IsShorterThan(maxLength : Int) -> UITextViewRule {
+    return MaxLengthRule(maxLength: maxLength);
 }

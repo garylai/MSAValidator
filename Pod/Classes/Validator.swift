@@ -56,11 +56,33 @@ private class ValidationEntry<T : UIView> : ValidationEntryInfo{
 public class Validator {
     
     private var validationEntryDict: [UIView: ValidationEntryInfo]!;
-    public func makeSure<T : UIView>(target: T, _ rules: (T) -> ValidationResult...){
+    
+    public func makeSure<T : UIView>(target: T, _ rules: [(T) -> ValidationResult]){
         if validationEntryDict[target] == nil {
             validationEntryDict[target] = ValidationEntry<T>(target);
         }
         (validationEntryDict[target] as! ValidationEntry<T>).rules.appendContentsOf(rules);
+    }
+    
+    // TODO: refactor these 3 duplicating methods
+    public func makeSure(target: UITextView, _ rules: UITextViewRule...) {
+        makeSure(target, rules.map({ (r) -> ((UITextView) -> ValidationResult) in
+            r.validate;
+        }));
+    }
+    public func makeSure(target: UITextField, _ rules: UITextFieldRule...) {
+        makeSure(target, rules.map({ (r) -> ((UITextField) -> ValidationResult) in
+            r.validate;
+        }));
+    }
+    public func makeSure(target: UIPickerView, _ rules: UIPickerViewRule...) {
+        makeSure(target, rules.map({ (r) -> ((UIPickerView) -> ValidationResult) in
+            r.validate;
+        }));
+    }
+    
+    public func makeSure<T : UIView>(target: T, _ rules: (T) -> ValidationResult...){
+        makeSure(target, rules);
     }
     
     public init () {

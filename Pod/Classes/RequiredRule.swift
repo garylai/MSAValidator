@@ -8,28 +8,30 @@
 
 import UIKit
 
-private class RequiredRule {
-    private static let MESSAGE = "This Field is required";
-    private func validate(inputText : String?) -> ValidationResult {
+private class RequiredRule : MSARule, UITextFieldRule, UITextViewRule {
+    override var defaultErrorMessage : String {
+        return "This Field is required";
+    }
+    func validate(inputText : String?) -> ValidationResult {
         guard let text = inputText where !text.isEmpty else {
-            return ValidationResult(false, [RequiredRule.MESSAGE]);
+            return ValidationResult(false, [errorMessage]);
         }
         return ValidationResult(true);
     }
-    private func validate(textView : UITextView) -> ValidationResult {
+    func validate(textView : UITextView) -> ValidationResult {
         return validate(textView.text)
     }
     
-    private func validate(textField : UITextField) -> ValidationResult {
+    func validate(textField : UITextField) -> ValidationResult {
         return validate(textField.text);
     }
 }
 
-public func IsPresent() -> (UITextView) -> ValidationResult {
-    return RequiredRule().validate;
+public func IsPresent() -> UITextFieldRule {
+    return RequiredRule();
 }
 
-public func IsPresent() -> (UITextField) -> ValidationResult {
-    return RequiredRule().validate;
+public func IsPresent() -> UITextViewRule {
+    return RequiredRule();
 }
  

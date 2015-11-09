@@ -8,27 +8,24 @@
 
 import UIKit
 
-private class PickerViewRule {
+private class PickerViewRule: MSARule, UIPickerViewRule {
     private let componentIndex: Int;
     private let validRange: Range<Int>;
-    private var message :String {
-        get {
-            return "Selected row in component no. \(componentIndex + 1) is not between \(validRange.startIndex + 1) and \(validRange.endIndex + 1)";
-        }
+    override var defaultErrorMessage :String {
+        return "Selected row in component no. \(componentIndex + 1) is not between \(validRange.startIndex + 1) and \(validRange.endIndex)";
     }
     init(compmentIndex componentIndex: Int, validRange: Range<Int>){
         self.componentIndex = componentIndex;
         self.validRange = validRange;
     }
-    private func validate(pickerView: UIPickerView) -> ValidationResult {
+    func validate(pickerView: UIPickerView) -> ValidationResult {
         if validRange ~= pickerView.selectedRowInComponent(componentIndex) {
             return ValidationResult(true);
-        } else {
-            return ValidationResult(false, [message]);
         }
+        return ValidationResult(false, [errorMessage]);
     }
 }
 
-public func Component(componentIndex: Int, IsInRange validRange: Range<Int>) -> ((UIPickerView) -> ValidationResult){
-    return PickerViewRule(compmentIndex: componentIndex, validRange: validRange).validate;
+public func Component(componentIndex: Int, IsInRange validRange: Range<Int>) -> UIPickerViewRule {
+    return PickerViewRule(compmentIndex: componentIndex, validRange: validRange);
 }

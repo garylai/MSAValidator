@@ -8,39 +8,36 @@
 
 import UIKit
 
-private class EmailRule {
-    private static let REGEX_STR = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
-    private static let REGEX = try! NSRegularExpression(pattern: REGEX_STR, options: []);
-    private static let MESSAGE = "Input is not a valid email adress";
-    
-    private func validate(inputText : String?) -> ValidationResult {
-        if let text = inputText {
-            let matches = EmailRule.REGEX.matchesInString(text,
-                options: [],
-                range: NSRange(location: 0, length: text.characters.count));
-            if matches.count == 1 {
-                return ValidationResult(true);
-            } else {
-                return ValidationResult(false, [EmailRule.MESSAGE]);
-            }
-        } else {
-            return ValidationResult(false, [EmailRule.MESSAGE]);
-        }
+private class EmailRule : MSARule, UITextFieldRule, UITextViewRule {
+    static let REGEX_STR = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
+    static let REGEX = try! NSRegularExpression(pattern: REGEX_STR, options: []);
+    override var defaultErrorMessage : String {
+        return "Input is not a valid email adress";
     }
     
-    private func validate(textView : UITextView) -> ValidationResult {
+    func validate(inputText : String) -> ValidationResult {
+        let matches = EmailRule.REGEX.matchesInString(inputText,
+                options: [],
+                range: NSRange(location: 0, length: inputText.characters.count));
+        if matches.count == 1 {
+            return ValidationResult(true);
+        }
+        return ValidationResult(false, [errorMessage]);
+    }
+    
+    func validate(textView : UITextView) -> ValidationResult {
         return validate(textView.text)
     }
     
-    private func validate(textField : UITextField) -> ValidationResult {
-        return validate(textField.text);
+    func validate(textField : UITextField) -> ValidationResult {
+        return validate(textField.text!);
     }
 }
 
-public func IsAnEmail() -> (UITextView) -> ValidationResult {
-    return EmailRule().validate;
+public func IsAnEmail() -> UITextFieldRule {
+    return EmailRule();
 }
 
-public func IsAnEmail() -> (UITextField) -> ValidationResult {
-    return EmailRule().validate;
+public func IsAnEmail() -> UITextViewRule{
+    return EmailRule();
 }
